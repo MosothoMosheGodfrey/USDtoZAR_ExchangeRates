@@ -1,0 +1,50 @@
+Datetime,Product,Model Name,Issue/Error
+2025-02-16 18:53:20.417318,Exchange rate (USD to ZAR),LSTM,"in user code:
+
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py"", line 2341, in predict_function  *
+        return step_function(self, iterator)
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py"", line 2327, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py"", line 2315, in run_step  **
+        outputs = model.predict_step(data)
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py"", line 2283, in predict_step
+        return self(x, training=False)
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/utils/traceback_utils.py"", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/input_spec.py"", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer ""sequential"" is incompatible with the layer: expected shape=(None, 1, 1), found shape=(None, 8, 1)
+"
+2025-02-16 18:53:34.608137,Exchange rate (USD to ZAR),GRU,"in user code:
+
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py"", line 2341, in predict_function  *
+        return step_function(self, iterator)
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py"", line 2327, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py"", line 2315, in run_step  **
+        outputs = model.predict_step(data)
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py"", line 2283, in predict_step
+        return self(x, training=False)
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/utils/traceback_utils.py"", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File ""/usr/local/lib/python3.10/dist-packages/keras/src/engine/input_spec.py"", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer ""sequential_1"" is incompatible with the layer: expected shape=(None, 1, 1), found shape=(None, 8, 1)
+"
+2025-02-16 18:53:34.614052,Exchange rate (USD to ZAR),XGBoost,"[18:53:34] ../src/c_api/../data/array_interface.h:129: Check failed: typestr.size() == 3 || typestr.size() == 4: `typestr' should be of format <endian><type><size of type in bytes>.
+Stack trace:
+  [bt] (0) /usr/local/lib/python3.10/dist-packages/xgboost/lib/libxgboost.so(+0x1395a3) [0x7f5e8b7395a3]
+  [bt] (1) /usr/local/lib/python3.10/dist-packages/xgboost/lib/libxgboost.so(+0x165fe6) [0x7f5e8b765fe6]
+  [bt] (2) /usr/local/lib/python3.10/dist-packages/xgboost/lib/libxgboost.so(+0x16d28c) [0x7f5e8b76d28c]
+  [bt] (3) /usr/local/lib/python3.10/dist-packages/xgboost/lib/libxgboost.so(XGDMatrixCreateFromDense+0x174) [0x7f5e8b74ad54]
+  [bt] (4) /lib/x86_64-linux-gnu/libffi.so.8(+0x7e2e) [0x7f5f416f6e2e]
+  [bt] (5) /lib/x86_64-linux-gnu/libffi.so.8(+0x4493) [0x7f5f416f3493]
+  [bt] (6) /usr/lib/python3.10/lib-dynload/_ctypes.cpython-310-x86_64-linux-gnu.so(+0xa3e9) [0x7f5f420343e9]
+  [bt] (7) /usr/lib/python3.10/lib-dynload/_ctypes.cpython-310-x86_64-linux-gnu.so(+0x9a00) [0x7f5f42033a00]
+  [bt] (8) python(_PyObject_MakeTpCall+0x25b) [0x55ad3a0cb39b]
+
+"
+2025-02-16 18:53:35.076598,Exchange rate (USD to ZAR),Hybrid LSTM+ARIMA,local variable 'forecast_lstm' referenced before assignment
+2025-02-16 18:53:35.083229,Exchange rate (USD to ZAR),GPR,ufunc 'divide' cannot use operands with types dtype('<M8[ns]') and dtype('float64')
